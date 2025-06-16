@@ -269,6 +269,28 @@ function handleSubscription() {
     
     // Save user (simulate persistence)
     saveCurrentUser(currentUser);
+
+    // 新增：送資料到 n8n webhook
+    fetch('https://waynetang.zeabur.app/webhook/7f609c50-3951-4b65-897d-3c4b020b9701', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email: email,
+            topics: selectedTopics,
+            frequency: frequency,
+            subscriptionDate: new Date().toISOString(),
+            source: 'insight_hub_web'
+        })
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Webhook 發送失敗');
+        // 可在這裡加上額外的 UI 提示
+    })
+    .catch(error => {
+        alert('Webhook 發送失敗: ' + error.message);
+    });
     
     // Show success message
     showSuccessToast();
