@@ -14,24 +14,6 @@ const appData = {
     },
     {
       "id": 2,
-      "title": "Blockchain Technology Revolutionizing Supply Chain",
-      "excerpt": "深入了解區塊鏈技術如何提高供應鏈透明度和效率，創造更可信賴的商業環境。",
-      "date": "2025-06-13",
-      "topic": "Blockchain",
-      "author": "Mike Johnson",
-      "readTime": "7 min read"
-    },
-    {
-      "id": 3,
-      "title": "ESG Investment Trends in 2025",
-      "excerpt": "分析ESG投資的最新趨勢，探討可持續發展如何成為企業成功的關鍵因素。",
-      "date": "2025-06-12",
-      "topic": "ESG",
-      "author": "Lisa Wang",
-      "readTime": "6 min read"
-    },
-    {
-      "id": 4,
       "title": "Machine Learning in Financial Services",
       "excerpt": "了解機器學習如何改變金融服務業，從風險評估到客戶服務的全面革新。",
       "date": "2025-06-11",
@@ -40,22 +22,40 @@ const appData = {
       "readTime": "8 min read"
     },
     {
-      "id": 5,
-      "title": "Decentralized Finance (DeFi) Explained",
-      "excerpt": "深入探討去中心化金融的概念、優勢和挑戰，以及它對傳統金融系統的影響。",
+      "id": 3,
+      "title": "AI-Powered Healthcare Innovations",
+      "excerpt": "探討人工智慧在醫療領域的最新應用，從診斷輔助到藥物研發的突破性進展。",
       "date": "2025-06-10",
-      "topic": "Blockchain",
-      "author": "Alex Thompson",
-      "readTime": "9 min read"
+      "topic": "AI",
+      "author": "Dr. James Lee",
+      "readTime": "6 min read"
+    },
+    {
+      "id": 4,
+      "title": "新加坡2025年經濟展望",
+      "excerpt": "分析新加坡經濟發展趨勢，探討數位轉型和綠色經濟對未來成長的影響。",
+      "date": "2025-06-13",
+      "topic": "Singapore",
+      "author": "陳文華",
+      "readTime": "7 min read"
+    },
+    {
+      "id": 5,
+      "title": "新加坡智慧城市發展新動向",
+      "excerpt": "深入了解新加坡如何運用科技打造更智慧、更宜居的城市環境，從交通到能源管理的創新應用。",
+      "date": "2025-06-12",
+      "topic": "Singapore",
+      "author": "林美玲",
+      "readTime": "5 min read"
     },
     {
       "id": 6,
-      "title": "Corporate Sustainability Reporting Standards",
-      "excerpt": "解析最新的企業永續發展報告標準，幫助企業建立透明的ESG績效指標。",
+      "title": "新加坡教育政策最新調整",
+      "excerpt": "解析新加坡教育體系的最新改革，探討如何培養適應未來社會的人才。",
       "date": "2025-06-09",
-      "topic": "ESG",
-      "author": "Emma Martinez",
-      "readTime": "5 min read"
+      "topic": "Singapore",
+      "author": "王建國",
+      "readTime": "6 min read"
     }
   ],
   "topics": [
@@ -67,25 +67,11 @@ const appData = {
       "subscribers": 12500
     },
     {
-      "name": "Blockchain",
-      "displayName": "區塊鏈",
-      "description": "區塊鏈技術、加密貨幣和去中心化應用",
+      "name": "Singapore",
+      "displayName": "新加坡新聞",
+      "description": "新加坡最新時事、政策動態和社會發展",
       "color": "#059669",
       "subscribers": 8900
-    },
-    {
-      "name": "ESG",
-      "displayName": "永續發展",
-      "description": "環境、社會和治理相關的商業實踐",
-      "color": "#DC2626",
-      "subscribers": 15200
-    },
-    {
-      "name": "Technology",
-      "displayName": "科技趨勢",
-      "description": "最新科技發展和創新應用",
-      "color": "#7C2D12",
-      "subscribers": 10800
     }
   ],
   "newsletterFrequencies": [
@@ -94,9 +80,9 @@ const appData = {
     {"value": "monthly", "label": "每月", "description": "每月深度分析報告"}
   ],
   "sampleNewsletter": {
-    "subject": "本週AI與區塊鏈精選 - InsightHub Newsletter",
+    "subject": "本週AI與新加坡新聞精選 - VibinNews Newsletter",
     "date": "2025年6月15日",
-    "personalizedIntro": "Hi Sarah, 基於您對AI和區塊鏈的興趣，我們為您精選了本週最值得關注的文章。",
+    "personalizedIntro": "Hi Sarah, 基於您對AI和新加坡新聞的興趣，我們為您精選了本週最值得關注的文章。",
     "featuredArticles": [
       {
         "title": "The Future of AI in Content Creation",
@@ -104,8 +90,8 @@ const appData = {
         "link": "#"
       },
       {
-        "title": "Decentralized Finance (DeFi) Explained",
-        "excerpt": "深入探討去中心化金融的概念、優勢和挑戰...",
+        "title": "新加坡2025年經濟展望",
+        "excerpt": "分析新加坡經濟發展趨勢，探討數位轉型和綠色經濟...",
         "link": "#"
       }
     ]
@@ -208,9 +194,8 @@ function setupArticleFilters() {
 // Topic display
 function renderTopics() {
     const topicsList = document.getElementById('topics-list');
-    const topicCheckboxes = document.getElementById('topic-checkboxes');
     
-    // Render topics preview
+    // Render topics preview (不再需要 checkbox，因為是固定訂閱兩個主題)
     topicsList.innerHTML = appData.topics.map(topic => `
         <div class="topic-preview">
             <div class="topic-color" style="background-color: ${topic.color}"></div>
@@ -218,18 +203,6 @@ function renderTopics() {
                 <div class="topic-name">${topic.displayName}</div>
                 <div class="topic-description">${topic.description}</div>
             </div>
-            <div class="topic-subscribers">${topic.subscribers.toLocaleString()} 訂閱者</div>
-        </div>
-    `).join('');
-    
-    // Render topic checkboxes
-    topicCheckboxes.innerHTML = appData.topics.map(topic => `
-        <div class="checkbox-item">
-            <input type="checkbox" id="topic-${topic.name}" name="topics" value="${topic.name}">
-            <label for="topic-${topic.name}" class="checkbox-label">
-                <div class="checkbox-name">${topic.displayName}</div>
-                <div class="checkbox-description">${topic.description}</div>
-            </label>
         </div>
     `).join('');
 }
@@ -250,11 +223,12 @@ function handleSubscription() {
     
     const email = formData.get('email');
     const frequency = formData.get('frequency');
-    const selectedTopics = formData.getAll('topics');
+    // 自動訂閱 AI 和新加坡新聞兩個主題
+    const selectedTopics = ['AI', 'Singapore'];
     
     // Validate form
-    if (!email || selectedTopics.length === 0) {
-        alert('請填寫所有必填欄位');
+    if (!email) {
+        alert('請填寫電子郵件地址');
         return;
     }
     
@@ -395,7 +369,7 @@ function showNewsletterPreview() {
     
     preview.innerHTML = `
         <div class="newsletter-header">
-            <div class="newsletter-subject">本週${topicNames}精選 - InsightHub Newsletter</div>
+            <div class="newsletter-subject">本週${topicNames}精選 - VibinNews Newsletter</div>
             <div class="newsletter-date">${new Date().toLocaleDateString('zh-TW')}</div>
         </div>
         
@@ -430,13 +404,7 @@ function modifySubscription() {
     document.getElementById('email').value = currentUser.email;
     document.getElementById('frequency').value = currentUser.frequency;
     
-    // Check current topics
-    currentUser.topics.forEach(topicName => {
-        const checkbox = document.getElementById(`topic-${topicName}`);
-        if (checkbox) {
-            checkbox.checked = true;
-        }
-    });
+    // 主題已固定為 AI 和新加坡新聞，無需設置 checkbox
 }
 
 function unsubscribe() {

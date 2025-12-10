@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InsightHub - 智慧資訊電子報平台</title>
+    <title>VibinNews - 智慧資訊電子報平台</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +12,8 @@
         <div class="container">
             <div class="nav-content">
                 <div class="nav-brand">
-                    <h2>InsightHub</h2>
+                    <img src="VibinNews_Logo.png" alt="VibinNews" class="nav-logo">
+                    <h2>VibinNews</h2>
                 </div>
                 <div class="nav-links">
                     <a href="#home" class="nav-link active">首頁</a>
@@ -28,19 +29,19 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">獲取有意義的資訊洞察</h1>
-                <p class="hero-subtitle">訂閱您感興趣的議題，定期接收客製化的 Newsletter，持續吸收 AI、區塊鏈、ESG 等領域的重要資訊</p>
+                <h1 class="hero-title">掌握第一手的 AI 與 SG 新聞</h1>
+                <p class="hero-subtitle">訂閱 VibinNews，定期接收客製化新聞，持續吸收 AI 與新加坡的最新資訊</p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-number">47,400+</div>
+                        <div class="stat-number">20+</div>
                         <div class="stat-label">訂閱用戶</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">1,200+</div>
+                        <div class="stat-number">60+</div>
                         <div class="stat-label">精選文章</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">4</div>
+                        <div class="stat-number">2</div>
                         <div class="stat-label">熱門議題</div>
                     </div>
                 </div>
@@ -56,15 +57,14 @@
         <div class="container">
             <div class="section-header">
                 <h2>精選文章</h2>
-                <p>探索各個領域的深度洞察與趋势分析</p>
+                <p>探索兩大領域的深度洞察與趨勢分析</p>
             </div>
             
             <!-- Topic Filter -->
             <div class="topic-filter">
                 <button class="filter-btn active" data-filter="all">全部</button>
                 <button class="filter-btn" data-filter="AI">人工智慧</button>
-                <button class="filter-btn" data-filter="Blockchain">區塊鏈</button>
-                <button class="filter-btn" data-filter="ESG">永續發展</button>
+                <button class="filter-btn" data-filter="Singapore">新加坡新聞</button>
             </div>
 
             <!-- Articles Grid -->
@@ -79,11 +79,11 @@
         <div class="container">
             <div class="subscribe-content">
                 <div class="subscribe-info">
-                    <h2>訂閱客製化電子報</h2>
-                    <p>選擇您感興趣的議題，我們將定期為您提供精選的深度文章和趨勢分析</p>
+                    <h2>訂閱 VibinNews 電子報</h2>
+                    <p>訂閱後您將收到 AI 人工智慧與新加坡新聞的綜合電子報，我們將定期為您提供精選的深度文章和趨勢分析</p>
                     
                     <div class="topics-preview">
-                        <h3>可訂閱議題</h3>
+                        <h3>電子報內容</h3>
                         <div class="topics-list" id="topics-list">
                             <!-- Topics will be populated by JavaScript -->
                         </div>
@@ -95,13 +95,6 @@
                         <div class="form-group">
                             <label class="form-label" for="email">電子郵件地址</label>
                             <input type="email" class="form-control" id="email" name="email" required placeholder="your@email.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">感興趣的議題</label>
-                            <div class="checkbox-group" id="topic-checkboxes">
-                                <!-- Checkboxes will be populated by JavaScript -->
-                            </div>
                         </div>
 
                         <div class="form-group">
@@ -160,7 +153,7 @@
     <div class="toast success-toast" id="success-toast">
         <div class="toast-content">
             <span class="toast-icon">✓</span>
-            <span class="toast-message">訂閱成功！歡迎加入 InsightHub</span>
+            <span class="toast-message">訂閱成功！歡迎加入 VibinNews</span>
         </div>
     </div>
 

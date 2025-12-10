@@ -164,7 +164,7 @@
   --color-info: rgba(167, 169, 169, 1);
   --color-focus-ring: rgba(50, 184, 198, 0.4);
   --color-btn-primary-text: rgba(19, 52, 59, 1);
-  --color-card-border: rgba(119, 124, 124, 0.15);
+  --color-card-border: rgba(119, 124, 124, 0.2);
   --color-card-border-inner: rgba(119, 124, 124, 0.15);
   --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
     inset 0 -1px 0 rgba(0, 0, 0, 0.15);
@@ -332,14 +332,17 @@ pre code {
 .btn--primary {
   background: var(--color-primary);
   color: var(--color-btn-primary-text);
+  border: 1px solid var(--color-primary);
 }
 
 .btn--primary:hover {
   background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
 }
 
 .btn--primary:active {
   background: var(--color-primary-active);
+  border-color: var(--color-primary-active);
 }
 
 .btn--secondary {
@@ -363,6 +366,7 @@ pre code {
 
 .btn--outline:hover {
   background: var(--color-secondary);
+  border-color: var(--color-primary);
 }
 
 .btn--sm {
@@ -675,6 +679,18 @@ select.form-control {
   padding: var(--space-16) 0;
 }
 
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
 .nav-brand h2 {
   color: var(--color-primary);
   margin: 0;
@@ -701,7 +717,7 @@ select.form-control {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
+  background: var(--color-background);
   padding: 120px 0 80px;
   text-align: center;
 }
@@ -788,14 +804,18 @@ select.form-control {
   padding: var(--space-8) var(--space-20);
   border-radius: var(--radius-full);
   border: 1px solid var(--color-border);
-  background: var(--color-surface);
+  background: var(--color-background);
   color: var(--color-text);
   font-weight: var(--font-weight-medium);
   cursor: pointer;
   transition: all var(--duration-fast) var(--ease-standard);
 }
 
-.filter-btn:hover,
+.filter-btn:hover {
+  background: var(--color-secondary);
+  border-color: var(--color-primary);
+}
+
 .filter-btn.active {
   background: var(--color-primary);
   color: var(--color-btn-primary-text);
@@ -818,8 +838,9 @@ select.form-control {
 }
 
 .article-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
 }
 
 .article-topic {
@@ -859,7 +880,7 @@ select.form-control {
 /* Subscribe Section */
 .subscribe-section {
   padding: 80px 0;
-  background: var(--color-surface);
+  background: var(--color-background);
 }
 
 .subscribe-content {
@@ -928,10 +949,11 @@ select.form-control {
 }
 
 .subscribe-form-container {
-  background: var(--color-background);
+  background: var(--color-surface);
   padding: var(--space-32);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .checkbox-group {
