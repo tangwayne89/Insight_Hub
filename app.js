@@ -102,6 +102,44 @@ const appData = {
 let currentUser = null;
 let currentFilter = 'all';
 
+// Utility functions for detecting platform and country
+function detectPlatform() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return 'iOS';
+    }
+    if (/android/i.test(userAgent)) {
+        return 'Android';
+    }
+    if (/Mac/.test(navigator.platform)) {
+        return 'macOS';
+    }
+    if (/Win/.test(navigator.platform)) {
+        return 'Windows';
+    }
+    if (/Linux/.test(navigator.platform)) {
+        return 'Linux';
+    }
+    return 'Unknown';
+}
+
+function detectCountry() {
+    // Try to get country from browser language/locale
+    const locale = navigator.language || navigator.userLanguage || 'en-US';
+    const countryCode = locale.split('-')[1] || locale.split('_')[1] || '';
+    
+    // Map common country codes
+    const countryMap = {
+        'TW': 'TW', 'SG': 'SG', 'HK': 'HK', 'CN': 'CN',
+        'US': 'US', 'JP': 'JP', 'KR': 'KR', 'MY': 'MY',
+        'TH': 'TH', 'VN': 'VN', 'PH': 'PH', 'ID': 'ID',
+        'AU': 'AU', 'NZ': 'NZ', 'GB': 'GB', 'CA': 'CA'
+    };
+    
+    return countryMap[countryCode] || countryCode || 'Unknown';
+}
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
@@ -223,6 +261,9 @@ function handleSubscription() {
     
     const email = formData.get('email');
     const frequency = formData.get('frequency');
+    // 自動檢測平台和國家
+    const platform = detectPlatform();
+    const country = detectCountry();
     // 自動訂閱 AI 和新加坡新聞兩個主題
     const selectedTopics = ['AI', 'Singapore'];
     
@@ -236,6 +277,8 @@ function handleSubscription() {
     currentUser = {
         email: email,
         frequency: frequency,
+        platform: platform,
+        country: country,
         topics: selectedTopics,
         subscriptionDate: new Date().toISOString().split('T')[0],
         status: 'active'
@@ -245,15 +288,26 @@ function handleSubscription() {
     saveCurrentUser(currentUser);
 
     // 新增：送資料到 n8n webhook
+    // 注意：platform 和 country 同時放在 body 和 headers 中
+    // - body 中的用於 n8n 配置從 body 讀取的情況
+    // - headers 中的用於 n8n 配置從 headers 讀取的情況（如 sec-ch-ua-platform 和 x-zeabur-ip-country）
+    const requestHeaders = {
+        'Content-Type': 'application/json',
+        // 將 platform 放入 headers（n8n 可能從 sec-ch-ua-platform 讀取）
+        'sec-ch-ua-platform': platform,
+        // 將 country 放入 headers（n8n 可能從 x-zeabur-ip-country 讀取）
+        'x-zeabur-ip-country': country
+    };
+    
     fetch('https://waynetang.zeabur.app/webhook/7f609c50-3951-4b65-897d-3c4b020b9701', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        headers: requestHeaders,
         body: JSON.stringify({
             email: email,
             topics: selectedTopics,
             frequency: frequency,
+            platform: platform,  // 保留在 body 中作為備用
+            country: country,     // 保留在 body 中作為備用
             subscriptionDate: new Date().toISOString(),
             source: 'insight_hub_web'
         })
@@ -321,6 +375,18 @@ function renderDashboard() {
                         <span class="info-label">狀態</span>
                         <span class="status status--success">活躍</span>
                     </div>
+                    ${currentUser.platform ? `
+                    <div class="info-item">
+                        <span class="info-label">平台</span>
+                        <span class="info-value">${currentUser.platform}</span>
+                    </div>
+                    ` : ''}
+                    ${currentUser.country ? `
+                    <div class="info-item">
+                        <span class="info-label">國家</span>
+                        <span class="info-value">${currentUser.country}</span>
+                    </div>
+                    ` : ''}
                 </div>
                 <div class="dashboard-actions">
                     <button class="btn btn--outline btn--sm" onclick="showNewsletterPreview()">
@@ -405,6 +471,7 @@ function modifySubscription() {
     document.getElementById('frequency').value = currentUser.frequency;
     
     // 主題已固定為 AI 和新加坡新聞，無需設置 checkbox
+    // Platform 和 Country 會自動檢測，無需手動設置
 }
 
 function unsubscribe() {
