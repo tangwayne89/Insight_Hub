@@ -688,7 +688,12 @@ select.form-control {
 .nav-logo {
   height: 40px;
   width: auto;
+  max-width: 120px;
+  max-height: 40px;
+  min-width: 0;
   object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
 .nav-brand h2 {
@@ -1227,6 +1232,16 @@ select.form-control {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
+  }
+  
+  .nav-logo {
+    height: 32px;
+    max-width: 100px;
+    max-height: 32px;
+  }
+  
+  .nav-brand h2 {
+    font-size: var(--font-size-xl);
   }
   
   .hero {
