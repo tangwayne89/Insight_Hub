@@ -235,11 +235,13 @@ function renderTopics() {
     
     // Render topics preview (不再需要 checkbox，因為是固定訂閱兩個主題)
     topicsList.innerHTML = appData.topics.map(topic => `
-        <div class="topic-preview">
-            <div class="topic-color" style="background-color: ${topic.color}"></div>
-            <div class="topic-info">
+        <div class="topic-card" style="border-color: ${topic.color}40;">
+            <div class="topic-card-header" style="background-color: ${topic.color}15;">
+                <div class="topic-color" style="background-color: ${topic.color}"></div>
                 <div class="topic-name">${topic.displayName}</div>
-                <div class="topic-description">${topic.description}</div>
+            </div>
+            <div class="topic-card-body">
+                <p class="topic-description">${topic.description}</p>
             </div>
         </div>
     `).join('');
@@ -260,7 +262,7 @@ function handleSubscription() {
     const formData = new FormData(form);
     
     const email = formData.get('email');
-    const frequency = formData.get('frequency');
+    const frequency = 'weekly'; // 固定為每週
     // 自動檢測平台和國家
     const platform = detectPlatform();
     const country = detectCountry();
@@ -468,7 +470,7 @@ function modifySubscription() {
     
     // Pre-fill form with current data
     document.getElementById('email').value = currentUser.email;
-    document.getElementById('frequency').value = currentUser.frequency;
+    // 頻率固定為每週，無需設置
     
     // 主題已固定為 AI 和新加坡新聞，無需設置 checkbox
     // Platform 和 Country 會自動檢測，無需手動設置

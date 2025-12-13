@@ -78,15 +78,15 @@
     <section id="subscribe" class="subscribe-section">
         <div class="container">
             <div class="subscribe-content">
-                <div class="subscribe-info">
+                <div class="subscribe-header">
                     <h2>訂閱 VibinNews 電子報</h2>
-                    <p>訂閱後您將收到 AI 人工智慧與新加坡新聞的綜合電子報，我們將定期為您提供精選的深度文章和趨勢分析</p>
-                    
-                    <div class="topics-preview">
-                        <h3>電子報內容</h3>
-                        <div class="topics-list" id="topics-list">
-                            <!-- Topics will be populated by JavaScript -->
-                        </div>
+                    <p class="subscribe-description">訂閱後您將每週收到 AI 人工智慧與新加坡新聞的綜合電子報，我們將定期為您提供精選的深度文章和趨勢分析</p>
+                </div>
+
+                <div class="topics-preview">
+                    <h3>電子報內容</h3>
+                    <div class="topics-grid" id="topics-list">
+                        <!-- Topics will be populated by JavaScript -->
                     </div>
                 </div>
 
@@ -95,15 +95,6 @@
                         <div class="form-group">
                             <label class="form-label" for="email">電子郵件地址</label>
                             <input type="email" class="form-control" id="email" name="email" required placeholder="your@email.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="frequency">接收頻率</label>
-                            <select class="form-control" id="frequency" name="frequency">
-                                <option value="weekly">每週</option>
-                                <option value="daily">每日</option>
-                                <option value="monthly">每月</option>
-                            </select>
                         </div>
 
                         <button type="submit" class="btn btn--primary btn--full-width">
