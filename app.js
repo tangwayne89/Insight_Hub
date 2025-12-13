@@ -377,26 +377,6 @@ function renderDashboard() {
                         <span class="info-label">狀態</span>
                         <span class="status status--success">活躍</span>
                     </div>
-                    ${currentUser.platform ? `
-                    <div class="info-item">
-                        <span class="info-label">平台</span>
-                        <span class="info-value">${currentUser.platform}</span>
-                    </div>
-                    ` : ''}
-                    ${currentUser.country ? `
-                    <div class="info-item">
-                        <span class="info-label">國家</span>
-                        <span class="info-value">${currentUser.country}</span>
-                    </div>
-                    ` : ''}
-                </div>
-                <div class="dashboard-actions">
-                    <button class="btn btn--outline btn--sm" onclick="showNewsletterPreview()">
-                        預覽電子報
-                    </button>
-                    <button class="btn btn--outline btn--sm" onclick="modifySubscription()">
-                        修改設定
-                    </button>
                 </div>
             </div>
             
