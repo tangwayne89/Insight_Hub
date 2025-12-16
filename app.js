@@ -5,12 +5,33 @@ const appData = {
   "articles": [
     {
       "id": 1,
-      "title": "The Future of AI in Content Creation",
-      "excerpt": "探索人工智慧如何革命性地改變內容創作領域，從自動化寫作到個人化推薦系統。",
+      "title": "全球企業轉守為攻，AI 變現能力成生存關鍵",
+      "excerpt": "根據 BCG 和 Bloomberg 的「CEO Radar Q4 2025」報告，企業領導層正在進行決定性的戰略轉向。在經歷數月的防禦姿態後，CEO 們現在轉向以增長為重點的進攻策略。",
       "date": "2025-06-14",
       "topic": "AI",
-      "author": "Dr. Sarah Chen",
-      "readTime": "5 min read"
+      "author": "Jocelyn",
+      "readTime": "8 min read",
+      "fullContent": {
+        "source": "https://sponsored.bloomberg.com/immersive-story/bcg/the-ceo-radar-q4-2025",
+        "sections": [
+          {
+            "title": "一、新聞快讀 (What Happened)",
+            "content": "Global CEOs Shift Strategy: Prioritizing Growth Amidst Uncertainty\n\nAccording to the \"CEO Radar Q4 2025\" report released by Boston Consulting Group (BCG) and Bloomberg, corporate leadership is undergoing a decisive strategic pivot. After months of adopting a defensive posture due to tariff volatility and recession concerns, CEOs are now shifting towards an offensive strategy focused on growth.\n\nWhile trade uncertainties persist, mentions of defensive topics like \"Economic Slowdown\" have dropped significantly. Instead, discussions on earnings calls are increasingly centered on internal performance drivers, with mentions of Artificial Intelligence (AI) reaching historical highs. However, the report identifies a widening \"AI value gap.\" Only 5% of companies are classified as \"AI-Future Built,\" effectively scaling technology to achieve measurable Return on Investment (ROI). The majority of firms remain in the pilot phase, facing pressure from analysts to demonstrate how their tech investments are optimizing operations and supply chains."
+          },
+          {
+            "title": "二、關鍵字小百科 (Vibin Dictionary)",
+            "content": "1. AI Value Gap (AI 價值鴻溝)\n• English Definition: The strategic disparity between companies that have successfully scaled AI integration to generate tangible business value and those that have stalled at the experimental stage.\n• 解釋：指企業在 AI 應用上的效益落差。領先企業已將 AI 整合進核心業務流程（如動態定價、供應鏈預測）並產生獲利；而落後企業仍停留在測試階段，尚未能透過 AI 創造實質的營收增長或成本優化。\n\n2. ROI - Return on Investment (投資報酬率)\n• English Definition: A key performance metric used to evaluate the efficiency of an investment. In the context of AI, it refers to the quantifiable financial gain relative to the cost of technology implementation.\n• 解釋：衡量投資效益的關鍵指標。在 AI 領域，市場已不再滿足於技術的創新性，轉而嚴格審視投入的資金是否能轉化為具體的財務回報（如節省多少工時、增加多少營收）。\n\n3. Tariff Policy (關稅政策)\n• English Definition: Government-imposed taxes on imported goods. The report notes a decline in mentions of this topic, suggesting that businesses have incorporated trade volatility into their standard risk models rather than viewing it as an unforeseen shock.\n• 解釋：政府對進口貨品徵收的稅金。雖然貿易壁壘依然存在，但企業提及頻率下降，顯示企業已將「關稅變動」視為營運成本結構的一部分，並透過多元化供應鏈等策略進行了風險對沖。"
+          },
+          {
+            "title": "三、團隊洞察 (Vibin Insight)",
+            "content": "(1) AI 專家 (The AI Expert) 解析：\n從「技術驗證」走向「營運規模化」\n\n「報告中提到的『只有 5% 企業屬於 AI-Future Built』，反映了 AI 發展已進入深水區（Deep Water Zone）。前兩年，企業多處於 Proof of Concept (PoC，概念驗證) 階段，重點在於測試技術可行性。然而，2025 年 Q4 的數據顯示，資本市場的評估標準已發生質變。\n\n目前的產業痛點在於『規模化難題 (Scalability Challenge)』。許多 AI 模型在實驗室環境表現優異，但要部署到複雜的供應鏈或即時生產線時，面臨了資料治理（Data Governance）不全、算力成本過高以及與舊系統整合困難等問題。\n\n這對台灣科技產業的啟示是：未來的競爭力將取決於『AI 工程化能力』。意即，如何將一個 AI 模型轉化為穩定、可維護且具備正向 ROI 的軟體產品。懂模型架構只是基礎，能解決算力優化、資料管線（Data Pipeline）自動化的人才，才是縮小價值鴻溝的關鍵。」\n\n(2) 外交官 (The Diplomat) 解析：\n風險定價後的「戰略常態化」\n\n「報告指出北美企業對『關稅政策』的提及率下降 32%，這不應被解讀為地緣政治風險的消失，而是風險的『內部化 (Internalization)』與『定價 (Pricing-in)』。\n\n美國於 2025 年通過的《One Big Beautiful Bill Act》等法案，顯示保護主義已成結構性現實。CEO 們不再將每次的關稅變動視為突發危機，而是將其納入常態性的營運風險評估模型中。企業的戰略重心已從『預測政治動向』轉移至『建立韌性供應鏈』。\n\n對於台灣供應鏈而言，這意味著客戶將提出更嚴格的『供應鏈多元化』與『產地合規』要求。台灣企業必須具備更靈活的全球佈局能力，並能利用數據證明其供應鏈在極端地緣政治情境下，仍具備不中斷的交付韌性。」"
+          },
+          {
+            "title": "四、給讀者的思考 (Takeaway)",
+            "content": "不要花時間焦慮那些你無法改變的大環境（如關稅、經濟衰退），去精進那些你能控制的技能（如 AI 應用、跨領域整合）。未來的職場，不獎勵「擔憂的人」，只獎勵「在混亂中還能交出成績單的人」。"
+          }
+        ]
+      }
     },
     {
       "id": 2,
@@ -195,8 +216,10 @@ function renderArticles(filterTopic = 'all') {
     
     articlesGrid.innerHTML = filteredArticles.map(article => {
         const topic = appData.topics.find(t => t.name === article.topic);
+        const hasFullContent = article.fullContent ? 'data-has-content="true"' : '';
+        const clickHandler = article.fullContent ? `onclick="showArticleModal(${article.id})"` : '';
         return `
-            <div class="article-card" data-topic="${article.topic}">
+            <div class="article-card" data-topic="${article.topic}" data-article-id="${article.id}" ${hasFullContent} ${clickHandler}>
                 <div class="article-topic" style="background-color: ${topic.color}15; color: ${topic.color}">
                     ${topic.displayName}
                 </div>
@@ -444,6 +467,74 @@ function closeModal() {
     modal.classList.remove('active');
 }
 
+// Article full content modal
+function showArticleModal(articleId) {
+    const article = appData.articles.find(a => a.id === articleId);
+    if (!article || !article.fullContent) return;
+    
+    const modal = document.getElementById('article-modal');
+    const titleElement = document.getElementById('article-modal-title');
+    const contentElement = document.getElementById('article-full-content');
+    const topic = appData.topics.find(t => t.name === article.topic);
+    
+    titleElement.textContent = article.title;
+    
+    let contentHTML = `
+        <div class="article-header">
+            <div class="article-meta-full">
+                <span class="article-topic-badge" style="background-color: ${topic.color}15; color: ${topic.color}">
+                    ${topic.displayName}
+                </span>
+                <span class="article-author-full">作者：${article.author}</span>
+                <span class="article-date-full">${article.date}</span>
+                <span class="article-read-time-full">${article.readTime}</span>
+            </div>
+            ${article.fullContent.source ? `<div class="article-source"><a href="${article.fullContent.source}" target="_blank" rel="noopener noreferrer">查看原文連結</a></div>` : ''}
+        </div>
+        <div class="article-excerpt-full">
+            <p>${article.excerpt}</p>
+        </div>
+    `;
+    
+    if (article.fullContent.sections && article.fullContent.sections.length > 0) {
+        article.fullContent.sections.forEach(section => {
+            contentHTML += `
+                <div class="article-section">
+                    <h4 class="section-title">${section.title}</h4>
+                    <div class="section-content">${formatArticleContent(section.content)}</div>
+                </div>
+            `;
+        });
+    }
+    
+    contentElement.innerHTML = contentHTML;
+    modal.classList.add('active');
+}
+
+function closeArticleModal() {
+    const modal = document.getElementById('article-modal');
+    modal.classList.remove('active');
+}
+
+function formatArticleContent(content) {
+    // 转义 HTML 特殊字符
+    const escapeHtml = (text) => {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    };
+    
+    // 将内容按双换行分割成段落
+    const paragraphs = content.split('\n\n').filter(p => p.trim() !== '');
+    
+    return paragraphs.map(paragraph => {
+        const trimmed = paragraph.trim();
+        // 将单换行转换为 <br>，但保持列表格式
+        const lines = trimmed.split('\n').map(line => escapeHtml(line.trim()));
+        return `<p>${lines.join('<br>')}</p>`;
+    }).join('');
+}
+
 // Utility functions
 function modifySubscription() {
     scrollToSection('subscribe');
@@ -513,10 +604,23 @@ function setupEventListeners() {
         }
     });
     
+    document.getElementById('article-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeArticleModal();
+        }
+    });
+    
     // Escape key to close modal
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-            closeModal();
+            const newsletterModal = document.getElementById('newsletter-modal');
+            const articleModal = document.getElementById('article-modal');
+            if (newsletterModal.classList.contains('active')) {
+                closeModal();
+            }
+            if (articleModal.classList.contains('active')) {
+                closeArticleModal();
+            }
         }
     });
     
